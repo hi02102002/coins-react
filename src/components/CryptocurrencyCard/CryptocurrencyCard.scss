@@ -1,0 +1,26 @@
+@use '../../sass/variable' as *;
+
+.cryptocurrency-card {
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-color-2;
+  border-radius: 1rem;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-bottom: 2px solid $bg-color-3;
+
+    img {
+      max-width: 3.5rem;
+      height: 3.5rem;
+      flex-shrink: 0;
+    }
+  }
+
+  &__content {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,48 @@
+@use '../../../sass/variable' as *;
+
+.cryptocurrenciespage {
+  padding: 2.4rem;
+
+  .search-field {
+    display: block;
+    width: 100%;
+    max-width: 30rem;
+    margin: 0 auto 2.4rem auto;
+    padding: 0.8rem 1.5rem;
+    outline: 0;
+    border: 0;
+    border-radius: 1rem;
+    background-color: $bg-color-3;
+    color: $text-color;
+  }
+
+  .cryptocurrencies {
+    --col: 4;
+    --gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    margin-right: calc(-1 * var(--gap));
+
+    @media screen and (max-width: 1139px) {
+      --col: 3;
+    }
+
+    @media screen and (max-width: 1023px) {
+      --col: 2;
+    }
+
+    @media screen and (max-width: 767px) {
+      --col: 1;
+    }
+
+    li {
+      width: calc(100% / var(--col) - var(--gap));
+
+      a {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
