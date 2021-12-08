@@ -1,0 +1,36 @@
+@use '../../../sass/variable' as *;
+
+.newspage {
+  padding: 2.4rem;
+  position: relative;
+
+  &.loading {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .news {
+    --col: 3;
+    --gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    margin-right: calc(-1 * var(--gap));
+
+    @media screen and (min-width: 1280px) {
+      --col: 4;
+    }
+
+    @media screen and (max-width: 1023px) {
+      --col: 2;
+    }
+
+    li {
+      width: calc(100% / var(--col) - var(--gap));
+
+      a {
+        height: 100%;
+      }
+    }
+  }
+}

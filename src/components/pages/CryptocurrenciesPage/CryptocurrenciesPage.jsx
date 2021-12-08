@@ -1,4 +1,5 @@
 import CryptocurrencyCard from 'components/CryptocurrencyCard/CryptocurrencyCard';
+import Loading from 'components/Loading/Loading';
 import { fetchCoins } from 'features/coins/coinsSlice';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -26,11 +27,11 @@ const CryptocurrenciesPage = props => {
 
   const data = isSearching ? coinsSearch : coinsData;
 
-  return isLoading ? (
-    <p>Loading...</p>
-  ) : (
+  return (
     <div
-      className="cryptocurrenciespage"
+      className={
+        isLoading ? 'cryptocurrenciespage loading' : 'cryptocurrenciespage'
+      }
       style={props.simple ? { padding: '0', marginBottom: '2.4rem' } : null}
     >
       {props.simple ? null : (
@@ -45,24 +46,28 @@ const CryptocurrenciesPage = props => {
           }}
         />
       )}
-      <ul className="cryptocurrencies">
-        {data.map(coin => {
-          return (
-            <li key={coin.uuid}>
-              <Link to={`/cryptocurrencies/${coin.id}`}>
-                <CryptocurrencyCard
-                  name={coin.name}
-                  price={coin.price}
-                  rank={coin.rank}
-                  marketCap={coin.marketCap}
-                  change={coin.change}
-                  iconUrl={coin.iconUrl}
-                />
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <ul className="cryptocurrencies">
+          {data.map(coin => {
+            return (
+              <li key={coin.uuid}>
+                <Link to={`/cryptocurrencies/${coin.id}`}>
+                  <CryptocurrencyCard
+                    name={coin.name}
+                    price={coin.price}
+                    rank={coin.rank}
+                    marketCap={coin.marketCap}
+                    change={coin.change}
+                    iconUrl={coin.iconUrl}
+                  />
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 };

@@ -1,0 +1,76 @@
+@use '../../sass/variable' as *;
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-color-2;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  height: 100%;
+  color: $text-color;
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+
+    img {
+      margin-left: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .heading {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  &__content {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    & > .desc {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .provider {
+      display: flex;
+      align-items: center;
+      // margin-top: auto;
+
+      .name {
+        font-size: 1.2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+        max-width: 12rem;
+        margin-right: 1rem;
+      }
+
+      .hour {
+        margin-left: auto;
+        font-size: 1.2rem;
+      }
+
+      img {
+        max-width: 3rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+}

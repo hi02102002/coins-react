@@ -1,6 +1,8 @@
 import Navbar from 'components/Navbar/Navbar';
 import CryptocurrenciesPage from 'components/pages/CryptocurrenciesPage/CryptocurrenciesPage';
+import ExchangesPage from 'components/pages/ExchangesPage/ExchangesPage';
 import Homepage from 'components/pages/Homepage/Homepage';
+import NewsPage from 'components/pages/NewsPage/NewsPage';
 import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
             path="/cryptocurrencies"
             element={<CryptocurrenciesPage />}
           />
+          <Route exact path="/news" element={<NewsPage />} />
+          <Route exact path="/exchanges" element={<ExchangesPage />} />
         </Routes>
       </main>
     </div>

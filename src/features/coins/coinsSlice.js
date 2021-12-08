@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { instanceCoins } from 'api';
 
 export const fetchCoins = createAsyncThunk('coins/fetchCoins', async count => {
-  console.log(count);
   const response = await instanceCoins.get(`/coins?limit=${count}`);
   return response.data.data.coins;
 });
