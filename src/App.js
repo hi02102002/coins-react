@@ -20,7 +20,6 @@ function App() {
           <Route exact path="/news" element={<NewsPage />} />
           <Route exact path="/exchanges" element={<ExchangesPage />} />
           <Route
-            exact
             path="/cryptocurrencies/:id"
             element={<CryptocurrencyDetailPage />}
           />

@@ -42,7 +42,6 @@ const CryptocurrenciesPage = props => {
           onChange={searchHandler}
           onBlur={e => {
             setIsSearching(false);
-            e.target.value = '';
           }}
         />
       )}

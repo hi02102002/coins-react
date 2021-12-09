@@ -16,6 +16,10 @@
     gap: var(--gap);
     padding: 2.4rem 0;
     margin-right: calc(-1 * var(--gap));
+
+    @media screen and (max-width: 1023px) {
+      --col: 1;
+    }
   }
 
   .detail__col {

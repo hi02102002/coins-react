@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { IMG, NAVS } from 'constants/index';
+import { UilAngleRight } from '@iconscout/react-unicons';
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -50,9 +51,6 @@ const Navbar = () => {
         ))}
         <div className="line"></div>
       </ul>
-      <div className="nav__img">
-        <img src={IMG.safetyBox} alt="" />
-      </div>
     </nav>
   );
 };
