@@ -3,6 +3,11 @@
 .homepage {
   padding: 1.5rem 2.4rem;
   position: relative;
+
+  &.loading {
+    height: 100vh;
+  }
+
   &__heading {
     margin-bottom: 1.5rem;
   }

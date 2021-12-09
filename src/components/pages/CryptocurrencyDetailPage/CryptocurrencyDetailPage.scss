@@ -1,0 +1,56 @@
+@use '../../../sass/variable' as *;
+
+.cryptocurrency-detail {
+  padding: 2.4rem;
+  position: relative;
+
+  &.loading {
+    height: 100vh;
+  }
+
+  .detail__row {
+    --col: 2;
+    --gap: 2.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    padding: 2.4rem 0;
+    margin-right: calc(-1 * var(--gap));
+  }
+
+  .detail__col {
+    width: calc(100% / var(--col) - var(--gap));
+  }
+
+  .detail__heading {
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    .title {
+      margin: 0 1rem;
+    }
+
+    .value {
+      margin-left: auto;
+    }
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      text-transform: capitalize;
+    }
+  }
+}

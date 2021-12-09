@@ -30,6 +30,10 @@
 
   &__col {
     width: calc(100% / var(--col));
+
+    &:first-child {
+      width: 40%;
+    }
   }
 
   &__header {

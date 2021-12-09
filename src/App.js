@@ -1,5 +1,6 @@
 import Navbar from 'components/Navbar/Navbar';
 import CryptocurrenciesPage from 'components/pages/CryptocurrenciesPage/CryptocurrenciesPage';
+import CryptocurrencyDetailPage from 'components/pages/CryptocurrencyDetailPage/CryptocurrencyDetailPage';
 import ExchangesPage from 'components/pages/ExchangesPage/ExchangesPage';
 import Homepage from 'components/pages/Homepage/Homepage';
 import NewsPage from 'components/pages/NewsPage/NewsPage';
@@ -18,6 +19,11 @@ function App() {
           />
           <Route exact path="/news" element={<NewsPage />} />
           <Route exact path="/exchanges" element={<ExchangesPage />} />
+          <Route
+            exact
+            path="/cryptocurrencies/:id"
+            element={<CryptocurrencyDetailPage />}
+          />
         </Routes>
       </main>
     </div>

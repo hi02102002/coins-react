@@ -46,7 +46,7 @@ const CryptocurrenciesPage = props => {
           }}
         />
       )}
-      {isLoading ? (
+      {isLoading && !props.simple ? (
         <Loading />
       ) : (
         <ul className="cryptocurrencies">

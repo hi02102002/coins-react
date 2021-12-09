@@ -51,19 +51,19 @@ const ExchangesPage = () => {
         <Loading />
       ) : (
         <React.Fragment>
-          <div className="exchanges__row">
-            <div className="exchanges__col"></div>
-            <div className="exchanges__col"></div>
-            <div className="exchanges__col"></div>
-            <div className="exchanges__col"></div>
+          <div className="exchanges__row" style={{ padding: '1.5rem' }}>
+            <div className="exchanges__col">Exchanges</div>
+            <div className="exchanges__col">24h Trade Volume</div>
+            <div className="exchanges__col">Markets</div>
+            <div className="exchanges__col">Change</div>
           </div>
           <div className="exchanges__container">
             <div className="exchanges__group">
               {exchanges.map(exchange => {
                 return (
-                  <div className="exchanges__item">
+                  <div className="exchanges__item" key={exchange.uuid}>
                     <div className="exchanges__header">
-                      <div className="exchanges__row" key={exchange.uuid}>
+                      <div className="exchanges__row">
                         <div className="exchanges__col">
                           <div
                             style={{ display: 'flex', alignItems: 'center' }}
